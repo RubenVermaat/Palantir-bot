@@ -1,0 +1,14 @@
+[
+    {
+        "type" : "angry",
+        "dialog" : "How dare you"
+    },
+    {
+        "type": "angry",
+        "dialog": "You fool of a took"
+    },
+    {
+        "type" : "happy",
+        "dialog" : "HAPPY"
+    }
+]
