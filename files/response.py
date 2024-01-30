@@ -6,8 +6,8 @@ import json
 from discord.ext import commands
 
 class Response(commands.Cog):
-        def __init__(self, bot, data):
-                self.header = {'Accept': 'application/json','Authorization': 'Bearer -qLuFGgj_iTqLXdZBHg9'}
+        def __init__(self, bot, data, header):
+                self.header = header
                 self.bot = bot
                 self.data = data
 

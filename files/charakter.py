@@ -5,9 +5,9 @@ import requests
 import json
 from discord.ext import commands
 
-class charakter(commands.Cog):
-        def __init__(self, bot):
-                self.header = {'Accept': 'application/json','Authorization': 'Bearer -qLuFGgj_iTqLXdZBHg9'}
+class Charakter(commands.Cog):
+        def __init__(self, bot, header):
+                self.header = header
                 self.bot = bot
 
         @commands.Cog.listener()
@@ -63,4 +63,4 @@ def getCharakterByID(id, self):
 
 
 async def setup(bot):
-       await bot.add_cog(charakter(bot))
+       await bot.add_cog(Charakter(bot))

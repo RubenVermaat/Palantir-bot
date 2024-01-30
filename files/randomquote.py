@@ -3,9 +3,9 @@ import discord
 import requests
 from discord.ext import commands
 
-class randomquote(commands.Cog):
-        def __init__(self, bot):
-                self.header = {'Accept': 'application/json','Authorization': 'Bearer -qLuFGgj_iTqLXdZBHg9'}
+class Randomquote(commands.Cog):
+        def __init__(self, bot, header):
+                self.header = header
                 self.bot = bot
 
         @commands.Cog.listener()
@@ -44,7 +44,7 @@ def getCharakterByID(id, self):
         return returnText
 
 async def setup(bot):
-       await bot.add_cog(randomquote(bot))
+       await bot.add_cog(Randomquote(bot))
 
 class SimpleViewRandomQuote(discord.ui.View):
         @discord.ui.button(label="New random quote", style=discord.ButtonStyle.success)
