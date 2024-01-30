@@ -18,18 +18,19 @@ class Response(commands.Cog):
         @commands.command()
         async def response(self, ctx, arg):
             returnText = ""
-            if arg.lower() == "angry":
-                returnText = selectRandomTypeQoute(self, arg)
-            elif arg.lower() == "happy":
+            if selectRandomTypeQoute(self, arg) != "error":
                 returnText = selectRandomTypeQoute(self, arg)
             else:
                 returnText = "Type not reconized. Are you having a strook?"
             await ctx.send(returnText)  
 
 def selectRandomTypeQoute(self, type):
-    type_records = [quote for quote in self.data if quote['type'] == type]
-    random_record = random.choice(type_records)
-    return random_record.get('dialog')
+    type_records = [quote for quote in self.data if quote['type'].lower() == type.lower()]
+    if len(type_records) > 0:
+        random_record = random.choice(type_records)
+        return random_record.get('dialog')
+    else:
+        return "error"
 
 async def setup(bot):
        await bot.add_cog(Response(bot))

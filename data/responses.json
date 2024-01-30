@@ -1,14 +1,52 @@
 [
     {
+        "type" : "insult",
+        "dialog" : "Haven't you had any sleep Mr?",
+        "charakter" : "Samwise Gamgee"
+    },
+    {
+        "type": "insult",
+        "dialog": "What were you thinking Peregrin Took?",
+        "charakter" : "Pippin"
+    },
+    {
+        "type": "insult",
+        "dialog": "Little Hobbits do not belong in war Master Meriadoc.",
+        "character": "Thédon"
+    },
+    {
+        "type": "insult",
+        "dialog": "I think you have strength of a different kind",
+        "charakter": "Peregrin Took"
+    },
+    {
+        "type": "forgive",
+        "dialog": "So there's no hard feelings. Forgive and forget.",
+        "charakter": "Samwise Gamgee"
+    },
+    {
+        "type": "happy",
+        "dialog": "My precious!",
+        "charakter": "Gollum"
+    },
+    {
         "type" : "angry",
-        "dialog" : "How dare you"
+        "dialog" : "Cut him down!",
+        "charakter" : "Some dude"
     },
     {
         "type": "angry",
-        "dialog": "You fool of a took"
+        "dialog": "They cursed us!",
+        "charakter": "Some dude"
     },
     {
-        "type" : "happy",
-        "dialog" : "HAPPY"
+        "type": "angry",
+        "dialog": "Get down cur!",
+        "charakter": "Saruman"
+    },
+    {
+        "type": "angry",
+        "dialog": "Get back in the line you maggots! Get back in the line you slugs!",
+        "character": "Some orc"
     }
 ]
