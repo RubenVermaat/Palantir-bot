@@ -23,7 +23,6 @@ class Randomquote(commands.Cog):
                         # Choose a random record
                         random_record = random.choice(records.get('docs', []))
                         returnText = random_record.get('dialog')
-                        print(random_record)
 
                 else:
                         returnText = "No quote has been found"
@@ -37,7 +36,6 @@ def getCharakterByID(id, self):
         returnText = ""
         if response.ok:
                 record = response.json()
-                print(record)
                 returnText = record.get('docs', [])[0].get('name')
         else:
                 returnText = "No charakters has been found"

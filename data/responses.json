@@ -2,12 +2,12 @@
     {
         "type" : "insult",
         "dialog" : "Haven't you had any sleep Mr?",
-        "charakter" : "Samwise Gamgee"
+        "character" : "Samwise Gamgee"
     },
     {
         "type": "insult",
         "dialog": "What were you thinking Peregrin Took?",
-        "charakter" : "Pippin"
+        "character" : "Pippin"
     },
     {
         "type": "insult",
@@ -17,36 +17,71 @@
     {
         "type": "insult",
         "dialog": "I think you have strength of a different kind",
-        "charakter": "Peregrin Took"
+        "character": "Peregrin Took"
+    },
+    {
+        "type": "insult",
+        "dialog": "You Look Terrible.",
+        "character": "Legolas"
+    },
+    {
+        "type": "insult",
+        "dialog": "Throw Yourself In Next Time And Rid Us Of Your Stupidity!",
+        "character": "Gandalf"
+    },
+    {
+        "type": "insult",
+        "dialog": "Hey, Stinker! Don't Go Getting Too Far Ahead.",
+        "character": "Samwise Gamgee"
     },
     {
         "type": "forgive",
         "dialog": "So there's no hard feelings. Forgive and forget.",
-        "charakter": "Samwise Gamgee"
+        "character": "Samwise Gamgee"
     },
     {
         "type": "happy",
         "dialog": "My precious!",
-        "charakter": "Gollum"
+        "character": "Gollum"
+    },
+    {
+        "type": "happy",
+        "dialog": "Po-Tay-Toes!",
+        "character":"Samwise Gamgee"
     },
     {
         "type" : "angry",
         "dialog" : "Cut him down!",
-        "charakter" : "Some dude"
+        "character" : "Some dude"
     },
     {
         "type": "angry",
         "dialog": "They cursed us!",
-        "charakter": "Some dude"
+        "character": "Some dude"
     },
     {
         "type": "angry",
         "dialog": "Get down cur!",
-        "charakter": "Saruman"
+        "character": "Saruman"
     },
     {
         "type": "angry",
         "dialog": "Get back in the line you maggots! Get back in the line you slugs!",
         "character": "Some orc"
+    },
+    {
+        "type": "angry",
+        "dialog": "Shut up you! Go away! Get out of here!",
+        "character": "Samwise Gamgee"
+    },
+    {
+        "type": "angry",
+        "dialog": "Aaaaaahhhh!",
+        "character": "Denethor I"
+    },
+    {
+        "type": "sorry",
+        "dialog": "I'm sorry, Treebeard.",
+        "character": "Peregrin Took"
     }
 ]
