@@ -8,6 +8,7 @@ def getrandomquote(header):
     returnText = ""
     code = -1
     name = ""
+    print(response.status_code)
 
     if response.ok:
         # Choose a random record
@@ -30,3 +31,10 @@ def getCharakterByID(id, header):
         else:
                 returnText = "No charakters has been found"
         return returnText
+
+def getRandomItem(data):
+    if len(data) > 0:
+        random_record = random.choice(data)
+        return random_record
+    else:
+        return "error"
