@@ -23,6 +23,8 @@ class Help(commands.Cog):
             lines.append("  This will give you a lotr themed response based on type") 
             lines.append("/p randomquote") 
             lines.append("  This will give you a random lotr quote") 
+            lines.append("/p randomcountry") 
+            lines.append("  This will give you a random country in the mod") 
             lines.append("/p character [name]") 
             lines.append("  This will give you some general information about the character")
             lines.append("  Aswell as a link to the wiki page of said character")  

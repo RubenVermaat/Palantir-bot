@@ -20,6 +20,7 @@ class Country(commands.Cog):
         async def randomcountry(self, ctx):
                 returnText = ""
                 returnText = functions.getRandomItem(self.countries)
+                
                 await ctx.send("Name: " + returnText.get('name') + "\n" + "Focus tree status: " + returnText.get('focus_tree_status'))  
 
 async def setup(bot):
