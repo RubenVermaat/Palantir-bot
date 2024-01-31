@@ -4,6 +4,8 @@ https://discord.gg/FsbkWkpjRt
 Created by: TheOneAndOnly
 This bot uses the https://the-one-api.dev/ API
 #Commands
-- /character NAME
-- /response TYPE
-- /randomquote
+- /p character NAME
+- /p response TYPE
+- /p randomquote
+- /p randomcountry
+- /p help
