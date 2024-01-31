@@ -50,17 +50,5 @@ class Charakter(commands.Cog):
                 #Returning said string
                 await ctx.send(returnText)
 
-def getCharakterByID(id, self):
-        response = requests.get("https://the-one-api.dev/v2/character?_id=" + id, headers=self.header)
-        returnText = ""
-        if response.ok:
-                record = response.json()
-                print(record)
-                returnText = record.get('docs', [])[0].get('name')
-        else:
-                returnText = "No charakters has been found"
-        return returnText
-
-
 async def setup(bot):
        await bot.add_cog(Charakter(bot))
