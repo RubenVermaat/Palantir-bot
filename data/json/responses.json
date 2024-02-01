@@ -51,7 +51,7 @@
     },
     {
         "type": "insult",
-        "dialog": "Fool of a Took!",
+        "dialog": "Fool of a Took! Throw yourself in next time, and rid us of your stupidity.",
         "character": "Gandalf"
     },
     {
@@ -63,6 +63,21 @@
         "type": "insult",
         "dialog": "Only a Nazgûl deals in absolutes",
         "character": "LOSO"
+    },
+    {
+        "type": "insult",
+        "dialog": "What is your family but a thatched barn where brigands drink in the reek, and their brats roll on their floor among the dogs!",
+        "character": "Saruman"
+    },
+    {
+        "type": "insult",
+        "dialog": "Stupid fat hobbit ruins it!",
+        "character": "Gollum"
+    },
+    {
+        "type": "insult",
+        "dialog": "He breathed so loud we could have shot him in the dark",
+        "character": "Haldir"
     },
     {
         "type": "forgive",
