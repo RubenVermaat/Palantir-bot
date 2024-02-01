@@ -59,6 +59,25 @@ def getRandomCountry():
         result.data = "Something went wrong picked out a random country"
     return result
 
+def getCountry(name):
+    result = Result()
+    country = [country for country in json_data['countries.json'] if country['name'].lower() == name.lower()]
+    if country != "error":
+        result.data = country
+    else:
+        result.error = 1
+        result.data = "Something went wrong getting the country " + name
+    return result
+
+def GetAllCountries():
+    result = Result()
+    if json_data['countries.json'] != None:
+        result.data = json_data['countries.json']
+    else:
+        result.error = 1
+        result.data = "Something went wrong getting the country"
+    return result
+
 def getRandomItem(data):
     if len(data) > 0:
         random_record = random.choice(data)
