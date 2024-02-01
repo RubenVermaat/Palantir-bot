@@ -35,6 +35,36 @@
         "character": "Samwise Gamgee"
     },
     {
+        "type": "insult",
+        "dialog": "Your love of the halfling's leaf has clearly slowed your mind.",
+        "character": "Saruman"
+    },
+    {
+        "type": "insult",
+        "dialog": "You don't have any friends. Nobody likes you",
+        "character": "Gollum"
+    },
+    {
+        "type": "insult",
+        "dialog": "Be silent! Keep your forked tongue behind your teeth. I have not passed through fire and death to bandy crooked words with a witless worm!",
+        "character": "Gandalf"
+    },
+    {
+        "type": "insult",
+        "dialog": "Fool of a Took!",
+        "character": "Gandalf"
+    },
+    {
+        "type": "insult",
+        "dialog": "Get thee gone from my gate, thou jail-crow of Mandos",
+        "character": "Feanor"
+    },
+    {
+        "type": "insult",
+        "dialog": "Only a Nazgûl deals in absolutes",
+        "character": "LOSO"
+    },
+    {
         "type": "forgive",
         "dialog": "So there's no hard feelings. Forgive and forget.",
         "character": "Samwise Gamgee"

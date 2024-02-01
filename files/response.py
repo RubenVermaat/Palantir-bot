@@ -1,36 +1,18 @@
-import math
-import random
-import discord
+from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
+import os
 import requests
-import json
-from discord.ext import commands
+import random
+import files.functions as functions
 
-class Response(commands.Cog):
-        def __init__(self, bot, data, header):
-                self.header = header
-                self.bot = bot
-                self.data = data
-
-        @commands.Cog.listener()
-        async def on_ready(self):
-                print("Response command loaded")
-
-        @commands.command()
-        async def response(self, ctx, arg):
-            returnText = ""
-            if selectRandomTypeQoute(self, arg) != "error":
-                returnText = selectRandomTypeQoute(self, arg)
+class Response(Extension):
+        @slash_command("response", description="This will send a random response based on the given type", scopes=[476830081872822273])
+        @slash_option("type", "str option", 3, choices=["insult", "happy", "sorry", "forgive"], required=True)
+        async def response(self, ctx: SlashContext, *kwargs):
+            result =  functions.selectRandomTypeQoute(self, kwargs[0])
+            if result.error != -1:
+                await ctx.send(result.data)
             else:
-                returnText = "Type not reconized. Are you having a strook?"
-            await ctx.send(returnText)  
+                await ctx.send(result.data)
 
-def selectRandomTypeQoute(self, type):
-    type_records = [quote for quote in self.data if quote['type'].lower() == type.lower()]
-    if len(type_records) > 0:
-        random_record = random.choice(type_records)
-        return random_record.get('dialog')
-    else:
-        return "error"
-
-async def setup(bot):
-       await bot.add_cog(Response(bot))
+def setup(bot):
+       Response(bot)

@@ -1,36 +1,63 @@
 import random
 import requests
+import json
+import os
 
-def getrandomquote(header):
+header = {'Accept': 'application/json','Authorization': os.getenv('LOTR_API')}
+
+# Automaticly loading in all the .json files in the following directory
+directory_path = "./data/json"
+# Create a dictionary to store JSON data with file names as keys
+json_data = {}
+# Loop through each file in the directory
+for filename in os.listdir(directory_path):
+    if filename.endswith(".json"):
+        file_path = os.path.join(directory_path, filename)
+
+        # Read JSON content from the file
+        with open(file_path, 'r') as json_file:
+            data = json.load(json_file)
+
+        # Store the JSON data in the dictionary with the file name as the key
+        json_data[filename] = data
+
+
+def getRandomQuote():
+    result = Result()
     response = requests.get("https://the-one-api.dev/v2/quote", headers=header)
     #response.status_code response code variable
     records = response.json()
-    returnText = ""
-    code = -1
-    name = ""
-    print(response.status_code)
 
     if response.ok:
         # Choose a random record
         random_record = random.choice(records.get('docs', []))
-        returnText = random_record.get('dialog')
-        name = getCharakterByID(random_record.get('character'), header)
-        code = 1
+        result.data = random_record.get('dialog')
+        result.name = getCharakterNameByID(random_record.get('character'))
     else:
-        returnText = "No quote has been found"
-        print("No records found.")
+        result.data = "No quote has been found"
+        result.error = 1
     
-    return [code, returnText, name]
+    return result
 
-def getCharakterByID(id, header):
+def getCharakterNameByID(id):
         response = requests.get("https://the-one-api.dev/v2/character?_id=" + id, headers=header)
-        returnText = ""
+        name = ""
         if response.ok:
                 record = response.json()
-                returnText = record.get('docs', [])[0].get('name')
+                name = record.get('docs', [])[0].get('name')
         else:
-                returnText = "No charakters has been found"
-        return returnText
+                name = "Unknown"
+        return name
+
+def getRandomCountry():
+    result = Result()
+    country = getRandomItem(json_data['countries.json'])
+    if country != "error":
+        result.data = country
+    else:
+        result.error = 1
+        result.data = "Something went wrong picked out a random country"
+    return result
 
 def getRandomItem(data):
     if len(data) > 0:
@@ -38,3 +65,24 @@ def getRandomItem(data):
         return random_record
     else:
         return "error"
+    
+def selectRandomTypeQoute(self, type):
+    result = Result()
+    type_records = [quote for quote in json_data['responses.json'] if quote['type'].lower() == type.lower()]
+    if len(type_records) > 0:
+        random_record = getRandomItem(type_records)
+        if random_record != "error":
+            result.data = random_record.get('dialog')
+        else:
+            result.error = 1
+            result.data = "Something went wrong selecting a random quote"
+    else:
+        result.error = 1
+        result.data = "Something went wrong getting all the quotes"
+    return result
+
+class Result:
+     def __init__(self):
+          self.error = -1
+          self.data = ""
+          self.name = ""

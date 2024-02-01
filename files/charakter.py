@@ -1,30 +1,21 @@
-import math
-import random
-import discord
+from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
+import os
 import requests
-import json
-from discord.ext import commands
-
-class Charakter(commands.Cog):
-        def __init__(self, bot, header):
-                self.header = header
-                self.bot = bot
-
-        @commands.Cog.listener()
-        async def on_ready(self):
-                print("Charakter command loaded")
-
-        @commands.command()
-        async def character (self, ctx, arg):
+class Charakter(Extension):
+        @slash_command("character", description="This will send information about the character including a link to the wiki page", scopes=[476830081872822273])
+        @slash_option("name", "str option", 3, required=True)
+        async def character(self, ctx: SlashContext, *kwargs):
+                # await ctx.send(str(ctx.resolved))
+                # await ctx.send(f"Test: {kwargs}", components=[ActionRow(Button(1, "Test"))])
                 lines = [];
-                response = requests.get("https://the-one-api.dev/v2/character", headers=self.header)
+                response = requests.get("https://the-one-api.dev/v2/character", headers={'Accept': 'application/json','Authorization': os.getenv('LOTR_API')})
                 #response.status_code response code variable
                 records = response.json()
                 returnText = ""
 
                 if response.ok:
                         # Choose a random record
-                        found_record = next((record for record in records.get('docs', []) if (record.get('name').lower().find(arg.lower())) != -1), None)
+                        found_record = next((record for record in records.get('docs', []) if (record.get('name').lower().find(kwargs[0].lower())) != -1), None)
                         print(found_record)
                         if found_record != None:
                                  #Defining every line
@@ -49,6 +40,14 @@ class Charakter(commands.Cog):
                
                 #Returning said string
                 await ctx.send(returnText)
+        @character.error
+        async def command_error(self, e, *args, **kwargs):
+                print(f"Command hit error with {args=}, {kwargs=}")
 
-async def setup(bot):
-       await bot.add_cog(Charakter(bot))
+        # @character.pre_run
+        # async def command_pre_run(self, context, *args, **kwargs):
+        #         print("I ran before the command did!")
+
+
+def setup(bot):
+       Charakter(bot)

@@ -1,35 +1,23 @@
-import random
-import discord
-import requests
+from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
+import os
 import files.functions as functions
-from discord.ext import commands
 
-class Randomquote(commands.Cog):
-        def __init__(self, bot, header):
-                self.header = header
-                self.bot = bot
-
-        @commands.Cog.listener()
-        async def on_ready(self):
-                print("Randomquote command loaded")
-
-        @commands.command()
-        async def randomquote(self, ctx):
-                result = functions.getrandomquote(self.header)
-                if result[0] == -1:
-                        await ctx.send(result[1])
+class Randomquote(Extension):
+        @slash_command("randomquote", description="This will send a random lotr quote", scopes=[476830081872822273])
+        async def character(self, ctx: SlashContext):
+                result = functions.getRandomQuote()
+                if result.error != -1:
+                        await ctx.send(result.data)
                 else:
-                        await ctx.send('"' + result[1] + '" - '+ result[2])
-                        # await ctx.send('"' + result[1] + '" - '+ result[2], view=SimpleViewRandomQuote())
+                        await ctx.send('"' + result.data + '" - '+ result.name)
+def setup(bot):
+       Randomquote(bot)
 
-async def setup(bot):
-       await bot.add_cog(Randomquote(bot))
+# class SimpleViewRandomQuote(discord.ui.View):
+#         import files.functions as functions
 
-class SimpleViewRandomQuote(discord.ui.View):
-        import files.functions as functions
-
-        @discord.ui.button(label="New random quote", style=discord.ButtonStyle.success)
-        async def RandomQuote(self, interaction: discord.Interaction, button: discord.ui.Button):
-                button.disabled = True
-                button.label = "No more pressing!"
-                await interaction.response.edit_message(view=self)
+#         @discord.ui.button(label="New random quote", style=discord.ButtonStyle.success)
+#         async def RandomQuote(self, interaction: discord.Interaction, button: discord.ui.Button):
+#                 button.disabled = True
+#                 button.label = "No more pressing!"
+#                 await interaction.response.edit_message(view=self)

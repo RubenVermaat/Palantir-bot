@@ -1,27 +1,23 @@
-import math
-import random
-import discord
+from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
+import os
 import requests
-import json
+import random
 import files.functions as functions
-from discord.ext import commands
 
-class Country(commands.Cog):
-        def __init__(self, bot, countries, header):
-                self.header = header
-                self.bot = bot
-                self.countries = countries
+class Country(Extension):
+        @slash_command("randomcountry", description="This will pick a random country to play", scopes=[476830081872822273])
+        @slash_option("name", "str option", 3, required=True)
+        async def country(self, ctx: SlashContext, *kwargs):
+                result = ""
+                result = functions.getRandomCountry()
+                if result.error != -1:
+                        await ctx.send("Name: " + result.get('name') + "\n" + "Focus tree status: " + result.get('focus_tree_status'))  
+                else:
+                        await ctx.send(result.data)
 
-        @commands.Cog.listener()
-        async def on_ready(self):
-                print("Randomcountry command loaded")
+        @slash_command("countries", description="This will send information about the character including a link to the wiki page", scopes=[476830081872822273])
+        async def countries(self, ctx: SlashContext):
+                await ctx.send("List of all the countries")
 
-        @commands.command()
-        async def randomcountry(self, ctx):
-                returnText = ""
-                returnText = functions.getRandomItem(self.countries)
-                
-                await ctx.send("Name: " + returnText.get('name') + "\n" + "Focus tree status: " + returnText.get('focus_tree_status'))  
-
-async def setup(bot):
-       await bot.add_cog(Country(bot))
+def setup(bot):
+       Country(bot)
