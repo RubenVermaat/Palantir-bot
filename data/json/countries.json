@@ -2,176 +2,211 @@
     {
         "country_id" : "GON",
         "name" : "Gondor",
-        "focus_tree_status" : "Reworked"
+        "focus_tree_status" : "Reworked",
+        "race" : "Men"
     },
     {
         "country_id": "MOR",
         "name": "Mordor",
-        "focus_tree_status": "Reworked"
+        "focus_tree_status": "Reworked",
+        "race": "Orc"
     },
     {
         "country_id": "ROH",
         "name": "Rohan",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Men"
     },
     {
         "country_id": "ANG",
         "name": "Angmar",
-        "focus_tree_status": "Reworked"
+        "focus_tree_status": "Reworked",
+        "race": "Men/Orc"
     },
     {
         "country_id": "ART",
         "name": "Arthedain",
-        "focus_tree_status": "Reworked"
+        "focus_tree_status": "Reworked",
+        "race": "Men"
     },
     {
         "country_id": "CAR",
         "name": "Cardolan",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "DAG",
         "name": "Dagorlad",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "DAL",
         "name": "Dale",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "DAM",
         "name": "Dol Amroth",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "DGU",
         "name": "Dol Guldur",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Orc"
     },
     {
         "country_id": "DOR",
         "name": "Dorwinion",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men/Elves"
     },
     {
         "country_id": "ENE",
         "name": "Enedwaith",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "ENT",
         "name": "Entwood",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Ents"
     },
     {
         "country_id": "ERE",
         "name": "Erebor",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Dwarves"
     },
     {
         "country_id": "GUN",
         "name": "Gundabad",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Orc"
     },
     {
         "country_id": "HAR",
         "name": "Harad",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Men"
     },
     {
         "country_id": "HLI",
         "name": "Harlindon",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "ISE",
         "name": "Isengard",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Men, Orc"
     },
     {
         "country_id": "ITH",
         "name": "Ithilien",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "KND",
         "name": "Khand",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "LIN",
         "name": "Lindon",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Elves"
     },
     {
         "country_id": "LTH",
         "name": "Lothlorien",
-        "focus_tree_status": "Reworked"
+        "focus_tree_status": "Reworked",
+        "race": "Elves"
     },
     {
         "country_id": "MIR",
         "name": "Mirkwood",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Elves/Spiders"
     },
     {
         "country_id": "MMO",
         "name": "Minas Morgul",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Orc"
     },
     {
         "country_id": "MOA",
         "name": "Moria",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Dwarves"
     },
     {
         "country_id": "MOC",
         "name": "OrcMoria",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Orcs"
     },
     {
         "country_id": "NDH",
         "name": "Nanduhirion",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "PEL",
         "name": "Pellardur",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "RHD",
         "name": "Rhudaur",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "RHU",
         "name": "Rhun",
-        "focus_tree_status": "Reworked"
+        "focus_tree_status": "Reworked",
+        "race": "Men"
     },
     {
         "country_id": "RIV",
         "name": "Rivendell",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Elves"
     },
     {
         "country_id": "SHI",
         "name": "Shire",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Hobbits"
     },
     {
         "country_id": "SPI",
         "name": "Spiders",
-        "focus_tree_status": "Outdated"
+        "focus_tree_status": "Outdated",
+        "race": "Spider"
     },
     {
         "country_id": "UMB",
         "name": "Umbar",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     },
     {
         "country_id": "VAL",
         "name": "Anduin",
-        "focus_tree_status": "Generic"
+        "focus_tree_status": "Generic",
+        "race": "Men"
     }
 ]

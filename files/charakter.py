@@ -1,12 +1,15 @@
-from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
+from interactions import slash_command, OptionType, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
 import os
 import requests
 class Charakter(Extension):
-        @slash_command("character", description="This will send information about the character including a link to the wiki page", scopes=[476830081872822273])
-        @slash_option("name", "str option", 3, required=True)
+        @slash_command("character", description="This will send information about the character including a link to the wiki page")
+        @slash_option(
+            name="name",
+            description="String Option",
+            required=True,
+            opt_type=OptionType.STRING
+        )
         async def character(self, ctx: SlashContext, *kwargs):
-                # await ctx.send(str(ctx.resolved))
-                # await ctx.send(f"Test: {kwargs}", components=[ActionRow(Button(1, "Test"))])
                 lines = [];
                 response = requests.get("https://the-one-api.dev/v2/character", headers={'Accept': 'application/json','Authorization': os.getenv('LOTR_API')})
                 #response.status_code response code variable

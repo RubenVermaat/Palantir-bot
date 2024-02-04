@@ -26,10 +26,10 @@ def getRandomQuote():
     result = Result()
     response = requests.get("https://the-one-api.dev/v2/quote", headers=header)
     #response.status_code response code variable
-    records = response.json()
 
     if response.ok:
         # Choose a random record
+        records = response.json()
         random_record = random.choice(records.get('docs', []))
         result.data = random_record.get('dialog')
         result.name = getCharakterNameByID(random_record.get('character'))
@@ -62,11 +62,22 @@ def getRandomCountry():
 def getCountry(name):
     result = Result()
     country = [country for country in json_data['countries.json'] if country['name'].lower() == name.lower()]
-    if country != "error":
-        result.data = country
+    if len(country) > 0:
+        result.data = country[0]
     else:
         result.error = 1
         result.data = "Something went wrong getting the country " + name
+    return result
+
+
+def getCountryByCode(code):
+    result = Result()
+    country = [country for country in json_data['countries.json'] if country['country_id'].lower() == code.lower()]
+    if len(country) > 0:
+        result.data = country[0]
+    else:
+        result.error = 1
+        result.data = "Something went wrong getting the country " + code
     return result
 
 def GetAllCountries():

@@ -9,8 +9,10 @@ import os
 import logging
 import json
 from interactions import Client, Intents, listen
-from interactions.api.events import Component
+from interactions.api.events import Component, MemberAdd
 from interactions.ext import prefixed_commands
+import pkgutil
+import functions
 
 from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
 
@@ -20,23 +22,33 @@ cls_log = logging.getLogger("MyLogger")
 cls_log.setLevel(logging.DEBUG)
 
 bot = Client(
-    intents=Intents.DEFAULT | Intents.MESSAGE_CONTENT,
+    intents=Intents.ALL,
     sync_interactions=True,
     asyncio_debug=True,
-    logger=cls_log
+    delete_unused_application_cmds=True,
+    logger=cls_log,
+    debug_scope= 476830081872822273
 )
-prefixed_commands.setup(bot)
 
 @listen()
-async def on_ready():
+async def on_startup():
     print("Ready")
     print(f"This bot is owned by {bot.owner}")
+    prefixed_commands.setup(bot)
 
 # You are the {member.memberCount} member to join.
-@bot.event
+@listen
 async def on_member_join(member):
-   true_member_count = len([m for m in bot.get_guild(os.getenv('CHANNEL_ID')).members if not m.bot]) # doesn't include bots 
-   await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {member.mention}, welcome to the discord server! You are the {true_member_count} member to join")
+    print("Ready")
+    await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, , welcome to the discord server! You are the member to join")
+#    true_member_count = len([m for m in bot.get_guild(os.getenv('CHANNEL_ID')).members if not m.bot]) # doesn't include bots 
+#    await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {member.mention}, welcome to the discord server! You are the {true_member_count} member to join")
+
+@listen()
+async def on_guild_join(event: MemberAdd):
+   true_member_count = len([m for m in event.guild.members if not m.bot]) # doesn't include bots 
+   random_quote = functions.getRandomQuote()
+   await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {event.member.mention}, welcome to the discord server! You are the {true_member_count} member to join\n'" + random_quote.data + "' - " + random_quote.name)
 
 @listen()
 async def on_guild_create(event):
@@ -55,9 +67,10 @@ async def on_component(event: Component):
     ctx = event.ctx
     await ctx.edit_origin("test")
 
-bot.load_extension("test_components")
-bot.load_extension("files.charakter")
-bot.load_extension("files.randomquote")
-bot.load_extension("files.response")
-bot.load_extension("files.country")
+# Loading all the extension files in the folder 'files'
+# Note: might break if other kind of files/folders exist in folder
+extension_names = [m.name for m in pkgutil.iter_modules(["files"], prefix="files.")]
+for extension in extension_names:
+    bot.load_extension(extension)
+
 bot.start(os.getenv('DISCORD_BOT_TOKEN'))

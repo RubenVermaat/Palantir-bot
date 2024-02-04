@@ -1,9 +1,10 @@
 from interactions import slash_command, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
 import os
-import files.functions as functions
+import functions as functions
 
 class Randomquote(Extension):
-        @slash_command("randomquote", description="This will send a random lotr quote", scopes=[476830081872822273])
+
+        @slash_command("randomquote", description="This will send a random lotr quote")
         async def character(self, ctx: SlashContext):
                 result = functions.getRandomQuote()
                 if result.error != -1:
