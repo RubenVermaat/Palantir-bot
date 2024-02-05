@@ -1,6 +1,7 @@
 from interactions import slash_command, OptionType, slash_option, SlashContext, context_menu, CommandType, Button, ActionRow,ButtonStyle, Extension
 import os
 import requests
+import functions
 class Charakter(Extension):
         @slash_command("character", description="This will send information about the character including a link to the wiki page")
         @slash_option(
@@ -11,17 +12,19 @@ class Charakter(Extension):
         )
         async def character(self, ctx: SlashContext, *kwargs):
                 lines = [];
-                response = requests.get("https://the-one-api.dev/v2/character", headers={'Accept': 'application/json','Authorization': os.getenv('LOTR_API')})
                 #response.status_code response code variable
-                records = response.json()
+                result = functions.getJsonCharakters()
+                records = result.data
                 returnText = ""
 
-                if response.ok:
+                if result.error != -1:
+                        returnText = records
+                else:
                         # Choose a random record
                         found_record = next((record for record in records.get('docs', []) if (record.get('name').lower().find(kwargs[0].lower())) != -1), None)
                         print(found_record)
                         if found_record != None:
-                                 #Defining every line
+                                #Defining every line
                                 lines.append("Name: " + found_record.get('name')) 
                                 lines.append("Race: " + found_record.get('race')) 
                                 if found_record.get('gender') != "": lines.append("Gender: " + found_record.get('gender')) 
@@ -36,9 +39,6 @@ class Charakter(Extension):
                                         returnText = returnText + line + "\n"
                         else:
                                 returnText = "I could not find such a being"
-                else:
-                        returnText = "Something went wrong"
-                        print(response.status_code)
                 
                
                 #Returning said string

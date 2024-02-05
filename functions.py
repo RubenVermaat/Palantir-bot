@@ -39,6 +39,16 @@ def getRandomQuote():
     
     return result
 
+def getJsonCharakters():
+    response = requests.get("https://the-one-api.dev/v2/character", headers=header)
+    result = Result()
+    if response.ok:
+        result.data = response.json()
+    else:
+        result.error = 1
+        result.data = "Something went wrong collecting all the characters"
+    return result
+
 def getCharakterNameByID(id):
         response = requests.get("https://the-one-api.dev/v2/character?_id=" + id, headers=header)
         name = ""

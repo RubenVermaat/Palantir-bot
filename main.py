@@ -23,6 +23,7 @@ cls_log.setLevel(logging.DEBUG)
 
 bot = Client(
     intents=Intents.ALL,
+    fetch_members=True,
     sync_interactions=True,
     asyncio_debug=True,
     delete_unused_application_cmds=True,
@@ -38,7 +39,7 @@ async def on_startup():
 
 @listen()
 async def on_guild_join(event: MemberAdd):
-   true_member_count = len([m for m in event.guild.members if not m.bot]) # doesn't include bots 
+   true_member_count = len([m for m in event.member.guild.members if not m.bot]) # doesn't include bots 
    random_quote = functions.getRandomQuote()
    await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {event.member.mention}, welcome to the discord server! You are the {true_member_count} member to join")
    await bot.get_channel(os.getenv('CHANNEL_ID')).send("'" + random_quote.data + "' - " + random_quote.name)
