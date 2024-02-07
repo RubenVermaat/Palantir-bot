@@ -13,7 +13,8 @@ class Response(Extension):
                     SlashCommandChoice(name="insult", value="insult"),
                     SlashCommandChoice(name="happy", value="happy"),
                     SlashCommandChoice(name="sorry", value="sorry"),
-                    SlashCommandChoice(name="forgive", value="forgive")
+                    SlashCommandChoice(name="forgive", value="forgive"),
+                    SlashCommandChoice(name="angry", value="angry")
             ],
             required=True,
             opt_type=OptionType.STRING
