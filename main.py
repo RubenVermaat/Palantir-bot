@@ -53,9 +53,9 @@ async def on_guild_join(event: MemberAdd):
 @listen()
 async def on_message_create(event):
     if "good bot" in event.message.content.lower():
-        await event.message.add_reaction("<:Palantir:1204564569515892736>")
+        await event.message.add_reaction("<:Palantir:1204047861025874010>")# test server id: <:Palantir:1204564569515892736>
     elif "palantir" in event.message.content.lower():
-        await event.message.add_reaction("<:Palantir:1204564569515892736>")
+        await event.message.add_reaction("<:Palantir:1204047861025874010>")
 
 # Loading all the extension files in the folder 'files'
 # Note: might break if other kind of files/folders exist in folder
