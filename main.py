@@ -2,6 +2,7 @@
 # #ADDED Connecting to API with lotr database
 # #ADDED Random quote command
 # #ADDED Random country command
+# #Adding list of countries in order of alphebet
 # #Adding trivia questions command/every day new question?
 # #Adding quiz to link role to someone
 
