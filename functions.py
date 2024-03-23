@@ -121,6 +121,21 @@ def selectRandomTypeQoute(self, type):
         result.data = "Something went wrong getting all the quotes"
     return result
 
+def selectAchievementByName(self, name):
+    result = Result()
+    achievements = [achievement for achievement in json_data['achievements.json'] if name.lower() in achievement['name'].lower()]
+    if len(achievements) > 0:
+        selected_record = achievements[0]
+        if selected_record != "error":
+            result.data = selected_record
+        else:
+            result.error = 1
+            result.data = "Something went wrong finding the achievement"
+    else:
+        result.error = 1
+        result.data = "Something went wrong finding the achievement"
+    return result
+
 class Result:
      def __init__(self):
           self.error = -1
