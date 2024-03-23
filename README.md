@@ -4,8 +4,9 @@ https://discord.gg/FsbkWkpjRt
 Created by: TheOneAndOnly
 This bot uses the https://the-one-api.dev/ API
 # Commands *required
-- character [name*]
+- /character [name*]
 - /response [insult/happy/sorry/forgive/angry*]
 - /randomquote
 - /country [all/name/code/random*] [input]
+- /achievement [name*] 
 
