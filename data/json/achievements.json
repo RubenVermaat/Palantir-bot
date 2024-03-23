@@ -1,0 +1,12 @@
+[
+    {
+        "achievement_id" : "ANG_the_necromancer",
+        "name" : "Somehow He Has Returned",
+        "description" : "Bring back Sauron into power in Angmar after having fled Mordor"
+    },
+    {
+        "achievement_id": "wizards_should_know_better",
+        "name": "Wizards should know better",
+        "description": "Play as any cooperative country and conquer or puppet Isengard"
+    }
+]
