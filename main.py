@@ -5,6 +5,8 @@
 # #Adding list of countries in order of alphebet
 # #Adding trivia questions command/every day new question?
 # #Adding quiz to link role to someone
+# #Adding way to get a list of all the achievements
+# #Adding safe guard when achievement exist but no image
 
 import os
 import logging
