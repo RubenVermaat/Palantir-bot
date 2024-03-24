@@ -7,6 +7,7 @@
 # #Adding quiz to link role to someone
 # #Adding way to get a list of all the achievements
 # #Adding safe guard when achievement exist but no image
+# #Adding a random achievement command
 
 import os
 import logging
