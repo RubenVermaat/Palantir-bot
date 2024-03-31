@@ -8,5 +8,70 @@
         "achievement_id": "wizards_should_know_better",
         "name": "Wizards should know better",
         "description": "Play as any cooperative country and conquer or puppet Isengard"
+    },
+    {
+        "achievement_id": "one_ring_to_rule_them_all",
+        "name": "One Ring to Rule Them All",
+        "description": "As any country, seize the Ring for yourself"
+    },
+    {
+        "achievement_id": "revenge_for_the_battle_of_the_five_armies",
+        "name": "Avenge the Battle of the give armies",
+        "description": "As Gundabad, control all core states of Erebor, Mirkwood and Dale"
+    },
+    {
+        "achievement_id": "SHI_taking_the_hobbits_to_isengard",
+        "name": "Taking the Hobbits to Isengard",
+        "description": "As the Shire, control all of Isengard's core states"
+    },
+    {
+        "achievement_id": "MOR_not_my_dark_lord",
+        "name": "#NotMyDarkLord",
+        "description": "As orc-controlled Mordor, defeat Sauron a second time by bringing down a Sauron-controlled Angmar"
+    },
+    {
+        "achievement_id": "DAM_god_damnroth",
+        "name": "God Damnroth",
+        "description": "As Dol Amroth, have twice as many factories as Gondor"
+    },
+    {
+        "achievement_id": "ENT_triple_tree_triumvirate",
+        "name": "Triple Tree Triumvirate",
+        "description": "As Entwood, control all core states of Lothlórien and Mirkwood"
+    },
+    {
+        "achievement_id": "MOR_morgoths_most_loyal_general",
+        "name": "Morgoth's Most Loyal Servant",
+        "description": "As Orc-controlled Moria, submit to the Balrog, join Mordor's faction and conquer all core states of Lothlórien and Rivendell"
+    },
+    {
+        "achievement_id": "ISE_my_brother_my_captian_my_king",
+        "name": "My Brother, my Captain, my King",
+        "description": "As Isengard, send Lurtz against the Fellowship and have him kill Boromir"
+    },
+    {
+        "achievement_id": "ISE_a_wizard_is_never_late",
+        "name": "A Wizard is Never Late",
+        "description": "As cooperative Isengard, defeat Mordor after Gondor and Rohan have capitulated."
+    },
+    {
+        "achievement_id": "MOA_side_by_side_with_an_elf",
+        "name": "Side by Side With an Elf",
+        "description": "As dwarf-controlled Moria, have Gimli as a general and join a faction with Rivendell or Lothlórien"
+    },
+    {
+        "achievement_id": "GON_one_does_simply_walk_into_mordor",
+        "name": "One Does Simply Walk Into Mordor",
+        "description": "As Gondor, defeat Mordor before the year 3021"
+    },
+    {
+        "achievement_id": "GON_for_frodo",
+        "name": "For Frodo!",
+        "description": "As Gondor, take the Black Gate whilst the Fellowship closes in on Mount Doom"
+    },
+    {
+        "achievement_id": "LTH_elven_boogaloo",
+        "name": "Fellowship 2: Elven Boogaloo",
+        "description": "As Lothlórien, form the Elven Fellowship and destroy the Ring"
     }
 ]
