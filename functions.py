@@ -6,6 +6,7 @@ import os
 header = {'Accept': 'application/json','Authorization': os.getenv('LOTR_API')}
 
 # Automaticly loading in all the .json files in the following directory
+# On server use directory_path = "/home/USERNAME/Palantir-bot/data/json"
 directory_path = "./data/json"
 # Create a dictionary to store JSON data with file names as keys
 json_data = {}
