@@ -7,13 +7,25 @@ import functions as functions
 class Achievement(Extension):
         @slash_command("achievement", description="This will send information about this achievement")
         @slash_option(
-            name="name",
+            name="command",
             description="String Option",
             required=True,
+            choices=[
+                SlashCommandChoice(name="random", value="random"),
+                SlashCommandChoice(name="name", value="name")
+            ],
+            opt_type=OptionType.STRING
+        )
+        @slash_option(
+            name="name",
+            description="String Option",
             opt_type=OptionType.STRING
         )
         async def response(self, ctx: SlashContext, *kwargs):
-            result =  functions.selectAchievementByName(self, kwargs[0])
+            if kwargs[0] == "random":
+                result =  functions.selectRandomAchievement(self)
+            elif kwargs[0] == "name":
+                result =  functions.selectAchievementByName(self, kwargs[1])
             lines = [];
             returnText = ""
             if result.error != -1:

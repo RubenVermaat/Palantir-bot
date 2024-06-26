@@ -137,6 +137,20 @@ def selectAchievementByName(self, name):
         result.data = "Something went wrong finding the achievement"
     return result
 
+def selectRandomAchievement(self):
+    result = Result()
+    if len(json_data['achievements.json']) > 0:
+        selected_record = random.choice(json_data['achievements.json'])
+        if selected_record != "error":
+            result.data = selected_record
+        else:
+            result.error = 1
+            result.data = "Something went wrong finding the achievement"
+    else:
+        result.error = 1
+        result.data = "Something went wrong finding the achievement"
+    return result
+
 class Result:
      def __init__(self):
           self.error = -1
