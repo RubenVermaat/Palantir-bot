@@ -43,7 +43,8 @@ async def on_startup():
 
 @listen()
 async def on_guild_join(event: MemberAdd):
-   true_member_count = len([m for m in event.member.guild.members if not m.bot]) # doesn't include bots 
+   guild = bot.get_guild(event.guild_id)
+   true_member_count = len([m for m in guild.members if not m.bot]) # doesn't include bots 
    random_quote = functions.getRandomQuote()
    await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {event.member.mention}, welcome to the discord server! You are the {true_member_count} member to join")
    await bot.get_channel(os.getenv('CHANNEL_ID')).send("'" + random_quote.data + "' - " + random_quote.name)
