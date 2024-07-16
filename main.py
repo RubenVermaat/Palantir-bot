@@ -32,7 +32,8 @@ bot = Client(
     asyncio_debug=True,
     delete_unused_application_cmds=True,
     logger=cls_log,
-    debug_scope= 476830081872822273
+    debug_scope = 476830081872822273
+    #debug_scope = 981671631476908073
 )
 
 @listen()
@@ -60,6 +61,8 @@ async def on_message_create(event):
         await event.message.add_reaction("<:Palantir:1204047861025874010>")# test server id: <:Palantir:1204564569515892736>
     elif "palantir" in event.message.content.lower():
         await event.message.add_reaction("<:Palantir:1204047861025874010>")
+    elif "love this mod" in event.message.content.lower():
+        await event.message.add_reaction("<:heart:>")
 
 # Loading all the extension files in the folder 'files'
 # Note: might break if other kind of files/folders exist in folder
