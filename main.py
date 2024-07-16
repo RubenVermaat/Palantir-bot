@@ -2,12 +2,12 @@
 # #ADDED Connecting to API with lotr database
 # #ADDED Random quote command
 # #ADDED Random country command
-# #Adding list of countries in order of alphebet
+# #ADDED list of countries in order of alphebet
 # #Adding trivia questions command/every day new question?
 # #Adding quiz to link role to someone
 # #Adding way to get a list of all the achievements
 # #Adding safe guard when achievement exist but no image
-# #Adding a random achievement command
+# #ADDED a random achievement command
 
 import os
 import logging
@@ -44,7 +44,8 @@ async def on_startup():
 
 @listen()
 async def on_guild_join(event: MemberAdd):
-   true_member_count = len([m for m in event.member.guild.members if not m.bot]) # doesn't include bots 
+   guild = bot.get_guild(event.guild_id)
+   true_member_count = len([m for m in guild.members if not m.bot]) # doesn't include bots 
    random_quote = functions.getRandomQuote()
    await bot.get_channel(os.getenv('CHANNEL_ID')).send(f"Hello, {event.member.mention}, welcome to the discord server! You are the {true_member_count} member to join")
    await bot.get_channel(os.getenv('CHANNEL_ID')).send("'" + random_quote.data + "' - " + random_quote.name)
