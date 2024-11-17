@@ -73,5 +73,45 @@
         "achievement_id": "LTH_elven_boogaloo",
         "name": "Fellowship 2: Elven Boogaloo",
         "description": "As Lothlórien, form the Elven Fellowship and destroy the Ring"
+    },
+    {
+        "achievement_id": "hobbit_slam_dunk",
+        "name": "Ring Through Rim Slam Dunk",
+        "description": "As a member of the Council of Elrond, do not attack the fellowship, and have Frodo cast the Ring into Mount Doom whilst you're at war with Mordor"
+    },
+    {
+        "achievement_id": "LTH_aight_imma_head_out",
+        "name": "Aight Imma Head Out",
+        "description": "As Lothlórien, have Galadriel and Celeborn leave Middle Earth when both Gondor and Mordor have capitulated, are subjects or don't exist"
+    },
+    {
+        "achievement_id": "no_meat_no_defeat",
+        "name": "No Meat, No Defeat",
+        "description": "Inflict over 1 million casualties against Mordor, whilst suffering under 10k yourself"
+    },
+    {
+        "achievement_id": "ROH_everyone_is_rohappy",
+        "name": "Everyone's Rohappy",
+        "description": "As Rohan, fulfill all policy issues of all 5 marshals"
+    },
+    {
+        "achievement_id": "ROH_my_horse_is_amazing",
+        "name": "My Horse is Amazing",
+        "description": "As Rohan, vanquish evil using only 3 cavalry divisions."
+    },
+    {
+        "achievement_id": "ROH_orthanc_you_very_much",
+        "name": "Orthanc You Very Much",
+        "description": "As Rohan, control Orthanc before 3022"
+    },
+    {
+        "achievement_id": "ELU_every_hole_is_home",
+        "name": "Every Hole's a Home",
+        "description": "As Ered Luin, have divisions in the Blue Mountains, Erebor and Moria."
+    },
+    {
+        "achievement_id": "why_didnt_they_just",
+        "name": "Why Didn't They just...?",
+        "description": "As any country, take the Eagles to Mordor and cast the Ring into the fires of Mt Doom."
     }
 ]
